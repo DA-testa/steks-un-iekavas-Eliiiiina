@@ -15,34 +15,35 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
             # Process opening bracket, write your code here
-            opening_brackets_stack.append(next)
+            opening_brackets_stack.append(Bracket(next,i+1)
             #pass
 
         if next in ")]}":
             # Process closing bracket, write your code here
-            if not opening_brackets_stack:
-                return i+1
+            if not stack:
+                return i
+        top_char,top_pos=stack.pop()        
             if (next==')' and opening_brackets_stack[-1]!='(') or \
-               (next=='}' and opening_brackets_stack[-1]!='{') or \
-               (next==']' and opening_brackets_stack[-1]!='['):
-                 return i+1
-        opening_brackets_stack.pop()
-        if not opening_brackets_stack:
-            return "Success"
-        else:
-            return opening_brackets_stack[-1][1]
-
-            #pass
+               (next==']' and opening_brackets_stack[-1]!='[') or \
+               (next=='}' and opening_brackets_stack[-1]!='{'):
+                 return i
+    if stack:
+        return stack[0][1]
+            else:
+                return "Succsess"
+     #pass
 
 
 def main():
-    text = input()
+    choice= input()
+    text=input()
     mismatch = find_mismatch(text)
+    choice=choise.upper()
+         if choice=="I":
     # Printing answer, write your code here
-    if isinstance(mismatch,int):
         print(mismatch)
     else:
-        print("Success")
+        print(mismatch)
 
 if __name__ == "__main__":
     main()
