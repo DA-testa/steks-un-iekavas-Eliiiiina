@@ -12,13 +12,13 @@ def are_matching(left, right):
 
 def find_mismatch(text):
     opening_brackets_stack = []
-    for i, next in enumerate(text):
-        if next in "([{":
+    for i, next_char in enumerate(text):
+        if next_char in "([{":
             # Process opening bracket, write your code here
-            opening_brackets_stack.append(Bracket(next,i+1))
+            opening_brackets_stack.append(Bracket(next_char,i+1))
             #pass
 
-        if next in ")]}":
+        if next_char in ")]}":
             # Process closing bracket, write your code here
            if(not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char, next_char)):
                 return i+1
@@ -26,7 +26,7 @@ def find_mismatch(text):
            
             if opening_brackets_stack:
                 return opening_brackets_stack[-1].position
-                    return "Success" 
+                return "Success" 
      #pass
 
  # Printing answer, write your code here
@@ -34,7 +34,7 @@ def main():
     choice= input()
     if choice=choise.upper()=="F":
          filename=input()
-           with open(filename,r) as f:
+           with open(filename,"r") as f:
              text=f.read().strip()
        elif choice.upper()=="I":
         text=input()
