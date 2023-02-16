@@ -34,7 +34,8 @@ def main():
     choice= input()
     text=input()
     mismatch= find_mismatch(text)
-    if choice=choice.upper()="I":
+    choice.upper()
+    if choice == "I":
       print (mismatch)
     else:
         print(mismatch)
