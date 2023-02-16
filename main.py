@@ -20,30 +20,28 @@ def find_mismatch(text):
 
         if next in ")]}":
             # Process closing bracket, write your code here
-            if not stack:
-                return i
-        top_char,top_pos=stack.pop()        
-            if (next==')' and opening_brackets_stack[-1]!='(') or \
-               (next==']' and opening_brackets_stack[-1]!='[') or \
-               (next=='}' and opening_brackets_stack[-1]!='{'):
-                 return i
-    if stack:
-        return stack[0][1]
-            else:
-                return "Succsess"
+           if(not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char, next_char)):
+                return i+1
+            opening_brackets_stack.pop()
+           
+            if opening_brackets_stack:
+                return opening_brackets_stack[-1].position
+                    return "Success" 
      #pass
 
-
+ # Printing answer, write your code here
 def main():
     choice= input()
-    text=input()
-    mismatch = find_mismatch(text)
-    choice=choise.upper()
-         if choice=="I":
-    # Printing answer, write your code here
-        print(mismatch)
-    else:
-        print(mismatch)
+    if choice=choise.upper()=="F":
+         filename=input()
+           with open(filename,r) as f:
+             text=f.read().strip()
+       elif choice.upper()=="I":
+        text=input()
+       else: print("Invalid choice")
+    return
+mismatch=find_mismatch(text)
+print(mismatch)
 
 if __name__ == "__main__":
     main()
