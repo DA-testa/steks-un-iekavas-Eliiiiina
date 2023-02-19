@@ -1,9 +1,9 @@
 # python3
 #Elīna Miltiņa 221RDC017
 
-import os
-from collections import namedtuple
 
+from collections import namedtuple
+import os
 Bracket = namedtuple("Bracket", ["char", "position"])
 
 
@@ -44,8 +44,7 @@ def main():
         return
 
     mismatch = find_mismatch(text)
-    # Printing answer, write your code here
     print(mismatch)
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
