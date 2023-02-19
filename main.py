@@ -25,24 +25,28 @@ def find_mismatch(text):
     return "Success"
 
 def main():
-    input_option = input("Choose input option - F (file input) or I (manual input): ")
-    if input_option.upper() == "F":
-        file_name = input("Enter file name: ")
-        with open(file_name) as f:
-            text = f.read()
-    elif input_option.upper() == "I":
-        while True:
-            user_input = input("Enter brackets: ")
-            if user_input and user_input[0].upper() == "I":
-                text = user_input[1:]
+    while True:
+        choice = input("Do you want to enter input or read from a file? (I/F)").upper()
+        if choice == "I":
+            text = input("Enter brackets: ")
+            break
+        elif choice == "F":
+            filename = input("Enter filename: ")
+            if os.path.exists(filename):
+                with open(filename) as f:
+                    text = f.read()
                 break
-    else:
-        print("Invalid input option")
-        return
-
+            else:
+                print("File does not exist. Please try again.")
+        else:
+            print("Invalid choice. Please try again.")
     mismatch = find_mismatch(text)
-    # Printing answer, write your code here
     print(mismatch)
+    
+  
+   # mismatch = find_mismatch(text)
+    # Printing answer, write your code here
+    #print(mismatch)
     
 if __name__ == "__main__":
     main()
