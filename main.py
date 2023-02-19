@@ -31,7 +31,7 @@ def find_mismatch(text):
      #pass
 
  # Printing answer, write your code here
- def main():
+def main():
     input_choice = input("Enter F to read input from file, or I to enter input manually: ")
     if input_choice.upper() == "F":
         file_name = input("Enter file name: ")
@@ -47,6 +47,8 @@ def find_mismatch(text):
         return
 
     mismatch = find_mismatch(text)
+    print(f"Mismatch at position {mismatch}" if mismatch != "Success" else mismatch)
 
-   if __name__ == "__main__":
-       main()                                      
+
+if __name__ == "__main__":
+    main()
