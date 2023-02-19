@@ -1,8 +1,8 @@
 # python3
 #Elīna Miltiņa 221RDC017
-#import os
 
 from collections import namedtuple
+import os
 
 Bracket = namedtuple("Bracket", ["char", "position"])
 
@@ -21,7 +21,7 @@ def find_mismatch(text):
 
         if next in ")]}":
             # Process closing bracket, write your code here
-           if(not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next)):
+           if(not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next):
                 return i+1
         opening_brackets_stack.pop()
            
@@ -32,23 +32,21 @@ def find_mismatch(text):
 
  # Printing answer, write your code here
 def main():
-letter = input("Choose (F) to input file path or (I) to input text:
-if letter.strip(). lower() == "fu.
-path = input ("Enter file path:
-if os.path.exists (path):
-with open (path, "r")
-text = f. read()
-mismatch = find_mismatch (text)
-print(mismatch)
-else:
-print("Invalid file path!")
-elif letter.strip().lower() :
-text. = input Enter text: ")
-mismatch = find_mismatch(text)
-# Printing answer, write your code here
-print (mismatch)
-else:
-print("Invalid input")
+input_choice = input("Enter F to read input from file, or I to enter input manually: ")
+    if input_choice.upper() == "F":
+        file_name = input("Enter file name: ")
+        if not os.path.isfile(file_name):
+            print("Error: File not found")
+            return
+        with open(file_name, 'r') as f:
+            text = f.read()
+    elif input_choice.upper() == "I":
+        text = input("Enter the string: ")
+    else:
+        print("Invalid input choice")
+        return
+
+    mismatch = find_mismatch(text)
 
 if __name__ == "__main__":
     main()
