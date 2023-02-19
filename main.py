@@ -1,5 +1,6 @@
 # python3
 #Elīna Miltiņa 221RDC017
+import os
 
 from collections import namedtuple
 
