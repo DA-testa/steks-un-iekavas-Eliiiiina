@@ -26,7 +26,7 @@ def find_mismatch(text):
 
 def main():
     while True:
-        choice = input("Do you want to enter input or read from a file? (I/F)").upper()
+        choice = input("Do you want to enter input or read from a file? (I/F)").strip().upper()
         if choice == "I":
             text = input("Enter brackets: ")
             break
@@ -43,11 +43,10 @@ def main():
     mismatch = find_mismatch(text)
     print(mismatch)
     
-  
    # mismatch = find_mismatch(text)
     # Printing answer, write your code here
     #print(mismatch)
-    
+
 if __name__ == "__main__":
     main()
 
