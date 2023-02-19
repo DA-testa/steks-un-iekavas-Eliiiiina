@@ -1,7 +1,5 @@
 # python3
 #Elīna Miltiņa 221RDC017
-
-
 from collections import namedtuple
 import os
 Bracket = namedtuple("Bracket", ["char", "position"])
@@ -25,7 +23,6 @@ def find_mismatch(text):
     if opening_brackets_stack:
         return opening_brackets_stack[0].position
     return "Success"
- # Printing answer, write your code here
 
 def main():
     input_option = input("Choose input option - F (file input) or I (manual input): ")
@@ -48,3 +45,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
