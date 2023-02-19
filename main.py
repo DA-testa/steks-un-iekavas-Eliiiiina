@@ -31,26 +31,22 @@ def find_mismatch(text):
      #pass
 
  # Printing answer, write your code here
-def get_input():
-    while True:
-        user_input = input("Choose input type - F for file input or I for user input: ").upper()
-        if user_input == "F":
-            file_path = input("Enter file path: ")
-            if os.path.isfile(file_path):
-                with open(file_path, "r") as file:
-                    return file.read()
-            else:
-                print("File does not exist. Try again.")
-        elif user_input == "I":
-            user_brackets = input("Enter brackets: ")
-            return user_brackets.replace("\n", "")
-        else:
-            print("Invalid input. Try again.")
-
 def main():
-    text = get_input()
+    input_choice = input("Enter F to read input from file, or I to enter input manually: ")
+    if input_choice.upper() == "F":
+        file_name = input("Enter file name: ")
+        if not os.path.isfile(file_name):
+            print("Error: File not found")
+            return
+        with open(file_name, 'r') as f:
+            text = f.read()
+    elif input_choice.upper() == "I":
+        text = input("Enter the string: ")
+    else:
+        print("Invalid input choice")
+        return
+
     mismatch = find_mismatch(text)
-    print(mismatch)
 
 if __name__ == "__main__":
     main()
