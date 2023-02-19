@@ -26,6 +26,7 @@ def find_mismatch(text):
         return opening_brackets_stack[0].position
     return "Success"
  # Printing answer, write your code here
+
 def main():
     input_option = input("Choose input option - F (file input) or I (manual input): ")
     if input_option.upper() == "F":
@@ -45,5 +46,6 @@ def main():
     mismatch = find_mismatch(text)
     # Printing answer, write your code here
     print(mismatch)
-if __name__ == "__main__":
-    main()
+
+    if __name__ == "__main__":
+        main()
