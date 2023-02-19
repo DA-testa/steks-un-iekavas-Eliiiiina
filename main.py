@@ -26,8 +26,8 @@ def find_mismatch(text):
         return opening_brackets_stack[0].position
     return "Success"
  # Printing answer, write your code here
-#def main():
-while True:
+def main():
+    while True:
         choice = input("Do you want to enter input or read from a file? (I/F)").upper()
         if choice == "I":
             text = input("Enter brackets: ")
