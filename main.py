@@ -1,8 +1,8 @@
 # python3
 #Elīna Miltiņa 221RDC017
 
-from collections import namedtuple
 import os
+from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
 
