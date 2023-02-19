@@ -42,9 +42,7 @@ def main():
                 print("File does not exist. Please try again.")
         else:
             print("Invalid choice. Please try again.")
-    mismatch = find_mismatch(text)
-    print(mismatch)
-
-
+            mismatch = find_mismatch(text)
+            print(mismatch)
 if __name__ == "__main__":
     main()
