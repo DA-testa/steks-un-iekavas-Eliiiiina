@@ -21,7 +21,7 @@ def find_mismatch(text):
 
         if next in ")]}":
             # Process closing bracket, write your code here
-           if(not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next):
+           if(not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next)):
                 return i+1
         opening_brackets_stack.pop()
            
@@ -31,8 +31,8 @@ def find_mismatch(text):
      #pass
 
  # Printing answer, write your code here
-def main():
-input_choice = input("Enter F to read input from file, or I to enter input manually: ")
+ def main():
+    input_choice = input("Enter F to read input from file, or I to enter input manually: ")
     if input_choice.upper() == "F":
         file_name = input("Enter file name: ")
         if not os.path.isfile(file_name):
@@ -48,5 +48,5 @@ input_choice = input("Enter F to read input from file, or I to enter input manua
 
     mismatch = find_mismatch(text)
 
-if __name__ == "__main__":
-    main()
+   if __name__ == "__main__":
+       main()                                      
